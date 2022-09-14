@@ -2,7 +2,7 @@ import React, { useState ,useEffect } from 'react';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import axios from 'axios';
 export default function Create() {
-    const [firstName, setFirstName] = useState('');
+    const [input_code, setInputcode] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
     const [token,setToken] = useState('');
@@ -18,7 +18,7 @@ export default function Create() {
         },
         data: JSON.stringify({
           language_id: 71,
-          source_code: firstName,
+          source_code: input_code,
           stdin: 'null'
         })
       };
@@ -55,13 +55,13 @@ export default function Create() {
         <div>
             <Form className="create-form">
                 <Form.Field>
-                    <label>First Name</label>
+                    <label>Input Code</label>
                     {/* <textarea placeholder='First Name' onChange={(e) => setFirstName(e.target.value)}/> */}
                     <textarea
               required
               name="solution"
               id="source"
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) => setInputcode(e.target.value)}
               className=" source"
               
             ></textarea>
